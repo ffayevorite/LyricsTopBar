@@ -45,5 +45,11 @@
       <summary>Panel position</summary>
       <description>Which box of the top bar the lyrics label sits in: left, centre or right.</description>
     </key>
+    <key name="panel-index" type="i">
+      <default>0</default>
+      <range min="-1" max="30"/>
+      <summary>Panel index</summary>
+      <description>Order of the label within its box. 0 is the leftmost slot; a larger number moves it rightward past other items; -1 places it last.</description>
+    </key>
   </schema>
 </schemalist>

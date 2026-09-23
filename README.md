@@ -43,6 +43,7 @@ Open from the panel menu, or `gnome-extensions prefs spotify-lyrics@onnichar.git
 | Setting | Meaning |
 | --- | --- |
 | Panel position | Which box of the top bar holds the label: left, centre or right. |
+| Panel index | Order within that box: 0 is leftmost, higher moves right, -1 is last. |
 | Maximum width | Fixed pixel width of the label; longer lines are ellipsized. |
 | Fall back to artist and title | What to show when a track has no lyrics. |
 | Hide when empty | Free the panel space instead of showing nothing. |

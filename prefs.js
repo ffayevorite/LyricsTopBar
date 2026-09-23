@@ -39,6 +39,15 @@ export default class SpotifyLyricsPreferences extends ExtensionPreferences {
             settings.set_string('panel-position', POSITIONS[position.selected]));
         settings.connect('changed::panel-position', syncPositionUp);
 
+        const index = new Adw.SpinRow({
+            title: _('Panel index'),
+            subtitle: _('Order within the box: 0 is leftmost, higher moves right, -1 is last.'),
+            adjustment: new Gtk.Adjustment({
+                lower: -1, upper: 30, step_increment: 1, page_increment: 5,
+            }),
+        });
+        display.add(index);
+
         const width = new Adw.SpinRow({
             title: _('Maximum width'),
             subtitle: _('Longer lines are ellipsized at this width, in pixels.'),
@@ -103,6 +112,7 @@ export default class SpotifyLyricsPreferences extends ExtensionPreferences {
         sources.add(unsynced);
 
         const bind = Gio.SettingsBindFlags.DEFAULT;
+        settings.bind('panel-index', index, 'value', bind);
         settings.bind('max-width', width, 'value', bind);
         settings.bind('sync-offset', offset, 'value', bind);
         settings.bind('tick-interval', tick, 'value', bind);

@@ -158,6 +158,7 @@ export default class SpotifyLyricsExtension extends Extension {
             }),
             this._settings.connect('changed::show-unsynced', () => this.refetch()),
             this._settings.connect('changed::panel-position', () => this._addIndicator()),
+            this._settings.connect('changed::panel-index', () => this._addIndicator()),
         ];
 
         this._watchId = Gio.bus_watch_name(
@@ -204,9 +205,8 @@ export default class SpotifyLyricsExtension extends Extension {
             box = 'center';
 
         this._indicator = new LyricsIndicator(this);
-        /* Rightmost within left/right boxes, but keep the centre box neat. */
-        const index = box === 'right' ? -1 : 0;
-        Main.panel.addToStatusArea(this.uuid, this._indicator, index, box);
+        Main.panel.addToStatusArea(
+            this.uuid, this._indicator, this._settings.get_int('panel-index'), box);
 
         /* A rebuild drops the cached line index, so force a redraw. */
         this._lastIndex = -2;
