@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.spotify-lyrics"
+          path="/org/gnome/shell/extensions/spotify-lyrics/">
+    <key name="max-width" type="i">
+      <default>420</default>
+      <range min="120" max="1200"/>
+      <summary>Maximum label width</summary>
+      <description>Width of the lyrics label in pixels before the text is ellipsized.</description>
+    </key>
+    <key name="sync-offset" type="d">
+      <default>0.0</default>
+      <range min="-10.0" max="10.0"/>
+      <summary>Sync offset in seconds</summary>
+      <description>Positive values show each line earlier, negative values later.</description>
+    </key>
+    <key name="tick-interval" type="i">
+      <default>200</default>
+      <range min="50" max="1000"/>
+      <summary>Refresh interval in milliseconds</summary>
+      <description>How often the displayed line is re-evaluated against the playback position.</description>
+    </key>
+    <key name="hide-when-empty" type="b">
+      <default>true</default>
+      <summary>Hide when there is nothing to show</summary>
+      <description>Remove the label from the panel when Spotify is closed, paused or no lyrics were found.</description>
+    </key>
+    <key name="fallback-to-title" type="b">
+      <default>true</default>
+      <summary>Show artist and title when no lyrics exist</summary>
+      <description>If LRCLIB has no synced lyrics for the track, display "Artist — Title" instead.</description>
+    </key>
+    <key name="show-unsynced" type="b">
+      <default>false</default>
+      <summary>Accept plain (unsynced) lyrics</summary>
+      <description>When only unsynced lyrics are available, spread them evenly across the track duration.</description>
+    </key>
+    <key name="panel-position" type="s">
+      <choices>
+        <choice value="left"/>
+        <choice value="center"/>
+        <choice value="right"/>
+      </choices>
+      <default>'center'</default>
+      <summary>Panel position</summary>
+      <description>Which box of the top bar the lyrics label sits in: left, centre or right.</description>
+    </key>
+  </schema>
+</schemalist>

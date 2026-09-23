@@ -1,0 +1,9 @@
+{
+  "uuid": "spotify-lyrics@onnichar.github.io",
+  "name": "Spotify Lyrics",
+  "description": "Shows the currently playing Spotify line in the centre of the top bar. Synced lyrics are fetched from the LRCLIB public API and matched against the MPRIS playback position.",
+  "shell-version": ["45", "46", "47", "48"],
+  "settings-schema": "org.gnome.shell.extensions.spotify-lyrics",
+  "url": "https://github.com/onnichar/spotify-lyrics",
+  "version": 1
+}
