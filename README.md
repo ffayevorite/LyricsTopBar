@@ -17,6 +17,20 @@ Prints the line Spotify is currently playing in the centre of the top bar.
 
 Nothing is written to disk: lyrics live in memory for the session only.
 
+## Supported versions
+
+| Component | Supported | Verified on |
+| --- | --- | --- |
+| Ubuntu | 22.04+ (any distro with the GNOME versions below) | 24.04.3 LTS |
+| GNOME Shell | 45, 46, 47, 48 | 46.0 |
+| Session | Wayland and X11 | Wayland |
+| gjs | 1.78+ | 1.80.2 |
+| libsoup | 3.x (`Soup-3.0` typelib) | 3.x |
+
+The GNOME Shell range is declared in `metadata.json`; other distributions
+(Fedora, Arch, etc.) on those Shell versions work too. Spotify must expose
+MPRIS — the desktop app and Flatpak both do; the Snap build sometimes does not.
+
 ## Install
 
     make install     # symlinks into ~/.local/share/gnome-shell/extensions
@@ -74,3 +88,10 @@ The panel menu also has one-click ±0.5 s nudges for tracks that drift.
 | `lrc.js` | LRC parser, plain-lyrics spreading, line lookup. |
 | `prefs.js` | Adwaita preferences window. |
 | `schemas/` | GSettings schema. |
+
+## Feedback
+
+Have thoughts on the extension? Fill out the short feedback form:
+<https://forms.gle/H2y5VN7VbSayENpg7>
+
+Responses are used for development only — they are not published or shared.
