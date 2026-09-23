@@ -105,7 +105,7 @@ class LyricsIndicator extends PanelMenu.Button {
          * Short lines are centred inside that fixed box. */
         const width = this._settings.get_int('max-width');
         this._label.set_style(
-            `width: ${width}px; min-width: ${width}px; text-align: center;`);
+            `width: ${width}px; min-width: ${width}px; text-align: left;`);
     }
 
     setText(text) {
